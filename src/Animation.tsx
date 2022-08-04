@@ -13,7 +13,9 @@ export function Box() {
 
   return (
     <>
-      <Animated.View style={[{ width: 100, aspectRatio: 1, backgroundColor: 'blue' }, animatedStyles]} />
+      <Animated.View
+        style={[{ width: 100, aspectRatio: 1, backgroundColor: 'blue' }, animatedStyles]}
+      />
       <Button onPress={() => (offset.value = withSpring(Math.random()))} title="Move" />
     </>
   );
