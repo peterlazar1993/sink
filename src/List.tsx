@@ -1,5 +1,4 @@
 import { FlashList } from '@shopify/flash-list';
-import React from 'react';
 import { Text, View } from 'react-native';
 
 const DATA = [

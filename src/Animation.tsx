@@ -1,6 +1,5 @@
-import React from 'react';
 import { Button } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 export function Box() {
   const offset = useSharedValue(0);
