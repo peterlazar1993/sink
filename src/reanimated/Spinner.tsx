@@ -13,7 +13,7 @@ const handleRotation = (progress: Animated.SharedValue<number>) => {
   return `${2 * Math.PI * progress.value}rad`;
 };
 
-export function Box() {
+export function Spinner() {
   const progress = useSharedValue(1);
   const scale = useSharedValue(2);
 
