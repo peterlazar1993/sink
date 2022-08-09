@@ -2,13 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import { PanGestureSample } from './src/reanimated/PanGestureHandler';
+import { InterpolateColors } from './src/reanimated/InterpolateColors';
 
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <PanGestureSample />
+        <InterpolateColors />
         <StatusBar style="auto" />
       </View>
     </GestureHandlerRootView>
