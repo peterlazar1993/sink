@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Dimensions, Switch } from 'react-native';
 import Animated, {
+  interpolate,
   interpolateColor,
   useAnimatedStyle,
   useDerivedValue,
+  withSpring,
   withTiming,
 } from 'react-native-reanimated';
 
@@ -56,7 +58,9 @@ export const InterpolateColors = () => {
 
   const rTextStyle = useAnimatedStyle(() => {
     const color = interpolateColor(progress.value, [0, 1], [Colors.light.text, Colors.dark.text]);
-    return { color };
+    const scale = withSpring(interpolate(progress.value, [0, 0.5, 1], [1, 0.8, 1]));
+
+    return { color, transform: [{ scale }] };
   });
 
   return (
@@ -73,7 +77,7 @@ export const InterpolateColors = () => {
           },
           rTextStyle,
         ]}>
-        Theme
+        {theme}
       </Animated.Text>
       <Animated.View
         style={[
