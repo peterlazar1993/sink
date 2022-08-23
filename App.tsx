@@ -1,24 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-import { InterpolateColors } from './src/reanimated/InterpolateColors';
+import { HNPostList } from './src/components/HNPostList';
 
 export default function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <InterpolateColors />
-        <StatusBar style="auto" />
-      </View>
-    </GestureHandlerRootView>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider>
+        <GestureHandlerRootView
+          style={{
+            flex: 1,
+          }}>
+          <HNPostList />
+        </GestureHandlerRootView>
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
