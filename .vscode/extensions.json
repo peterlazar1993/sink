@@ -2,6 +2,6 @@
     "recommendations": [
         "dbaeumer.vscode-eslint",
         "eamodio.gitlens",
-        "byCedric.vscode-expo"
+        "bycedric.vscode-expo"
     ]
 }
